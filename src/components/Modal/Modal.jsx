@@ -1,14 +1,14 @@
-import React, { memo, useCallback } from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 
 import "./style.css";
 
 const Modal = memo(({ children, onClose, title, ...props }) => {
-  const handleOverlayClick = useCallback((evt) => {
+  const handleOverlayClick = (evt) => {
     if (evt.target.classList.contains("overlay")) {
       onClose();
     }
-  }, []);
+  };
 
   return (
     <div className="overlay" onClick={handleOverlayClick}>

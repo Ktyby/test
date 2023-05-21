@@ -3,8 +3,6 @@ import getPictureUrl from '../../utils/getPictureUrl';
 
 import Modal from '../Modal';
 
-import { useModal } from './hooks';
-
 import './style.css';
 
 const App = () => {
@@ -35,18 +33,14 @@ const App = () => {
     }
   }, [topText, bottomText, selectedPictureUrl]);
 
-  const { handleModalShow, handleModalClose: onModalClose } = useModal({
-    setDisplayModal,
-  });
-
   const handleTakePicture = async () => {
-    handleModalShow();
+    setDisplayModal(true);
     const pictures = await getPictureUrl();
     setPicturesUrls(pictures);
   };
 
   const handleModalClose = () => {
-    onModalClose();
+    setDisplayModal(false);
     setPicturesUrls([]);
   };
 
@@ -59,9 +53,9 @@ const App = () => {
   };
 
   const handleSelectPicture = (evt) => {
+    setDisplayModal(false);
     setPictureSizes([evt.target.naturalWidth, evt.target.naturalHeight]);
     setSelectedPictureUrl(evt.target.src);
-    onModalClose();
     setPicturesUrls([]);
   };
 
