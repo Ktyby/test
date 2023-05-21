@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 80px;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__button {
+  width: 150px;
+  height: 35px;
+
+  margin-bottom: 40px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.main__button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.pictures__contrainer {
+  display: flex;
+  gap: 20px;
+}
