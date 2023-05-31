@@ -9,6 +9,14 @@
     "test": "jest",
     "build": "webpack --config webpack.config.js && scp ./dist/* ../api/public"
   },
+
+
+
+
+
+
+
+  
   "dependencies": {
     "axios": "^1.4.0",
     "prop-types": "^15.8.1",
